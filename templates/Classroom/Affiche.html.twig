@@ -1,0 +1,21 @@
+<table border=1>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Detail</th>
+</tr>
+{% for c in cc %}
+<tr>
+<tr>
+  <td>{{ c.id }}</td>
+  <td>{{ c.name }}</td>
+  <td><a href="{{path('detail',{id:c.id})}}">Details</a></td>
+    <td><a href="{{path('U',{id:f.id})}}">Update</a></td>
+      <td><a href="{{path('detail',{id:c.id})}}">Details</a></td>
+
+
+
+
+</tr>
+{% endfor %}
+</table>

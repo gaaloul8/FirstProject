@@ -1,0 +1,34 @@
+
+<table>
+    <tr>
+        <th> </th>
+        <th> </th>
+
+        <th> </th>
+
+        <th> </th>
+
+        <th> </th>
+        <th> </th>
+
+    </tr>
+    {% for ff in formation %}
+        <tr>
+            <td>{{ff.ref}} </td>
+            <td> {{ff.Titre |upper}}</td>
+            <td> {{ff.Description}}</td>
+            <td> {{ff.date_debut}}</td>
+            <td> {{ff.date_fin}}</td>
+            <td> {{ff.date_fin}}</td>
+        </tr>
+    
+        {% if 'theorique' in ff.Description %}
+        Titre de la formation:
+        <ul> <li>{{ff.Titre}}</li> </ul>
+        {%endif%} 
+
+    {%endfor%}        
+</table>
+{% for ff in formation | filter(ff=>'theorique' in ff.Description) %}
+{%endfor%}        
+
